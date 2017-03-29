@@ -1,18 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.deepanshu.musicalstructureapp.MainActivity">
+    android:background="#4a4a4a">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Player Header -->
+    <LinearLayout
+        android:id="@+id/player_header_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/inflater_player_header"
+        android:paddingLeft="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_5">
+
+        <!-- Song Title -->
+        <TextView
+            android:id="@+id/song_title_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="The Good, The Bad And The Ugly"
+            android:textColor="@color/colorSongText"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <!-- Playlist button -->
+        <ImageButton
+            android:id="@+id/playlist_ibtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@null"
+            android:contentDescription="@string/playlist_button"
+            android:src="@drawable/btn_playlist" />
+    </LinearLayout>
+
+    <!-- Song Thumbnail Image -->
+    <LinearLayout
+        android:id="@+id/song_thumbnail_ll"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@id/player_header_ll"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10">
 
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/thumbnail_image"
+            android:src="@drawable/adele" />
+    </LinearLayout>
+
+    <!-- Player Footer -->
+    <LinearLayout
+        android:id="@+id/player_footer_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_100"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/inflater_player_footer"
+        android:gravity="center">
+
+        <!-- Player Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10">
+
+            <!-- Previous Button -->
+            <ImageButton
+                android:id="@+id/previous_ibtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/previous"
+                android:src="@drawable/btn_previous" />
+
+            <!-- Backward Button -->
+            <ImageButton
+                android:id="@+id/backward_ibtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/fast_backward"
+                android:src="@drawable/btn_backward" />
+
+            <!-- Play Button -->
+            <ImageButton
+                android:id="@+id/play_ibtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/play"
+                android:src="@drawable/btn_play" />
+
+            <!-- Forward Button -->
+            <ImageButton
+                android:id="@+id/forward_ibtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/fast_forward"
+                android:src="@drawable/btn_forward" />
+
+            <!-- Next Button -->
+            <ImageButton
+                android:id="@+id/next_ibtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/next"
+                android:src="@drawable/btn_next" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Progress Bar/Seek bar -->
+    <SeekBar
+        android:id="@+id/progressbar_sb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/player_footer_ll"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_6"
+        android:paddingRight="@dimen/dp_6"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/seek_handler" />
+
+    <!-- Timer Display -->
+    <LinearLayout
+        android:id="@+id/timer_display_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/progressbar_sb"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20">
+
+        <!-- Current Duration Label -->
+        <TextView
+            android:id="@+id/current_duration_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:textColor="@color/colorCurrentDuration"
+            android:textStyle="bold" />
+
+        <!-- Total Duration Label -->
+        <TextView
+            android:id="@+id/total_duration_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textColor="@color/colorTotalDuration"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Repeat / Shuffle buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/timer_display_ll"
+        android:gravity="center">
+
+        <!-- Repeat Button -->
+        <ImageButton
+            android:id="@+id/repeat_ibtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_5"
+            android:background="@null"
+            android:src="@drawable/btn_repeat" />
+
+        <!-- Shuffle Button -->
+        <ImageButton
+            android:id="@+id/shuffle_ibtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:background="@null"
+            android:src="@drawable/btn_shuffle" />
+    </LinearLayout>
+</RelativeLayout>

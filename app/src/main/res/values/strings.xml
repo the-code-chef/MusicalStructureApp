@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MusicalStructureApp</string>
+    <string name="playlist_button">Playlist Button</string>
+    <string name="thumbnail_image">Thumbnail Image</string>
+    <string name="previous">Previous</string>
+    <string name="fast_backward">Fast Backward</string>
+    <string name="play">Play</string>
+    <string name="fast_forward">Fast Forward</string>
+    <string name="next">Next</string>
+    <string name="song_index">songIndex</string>
 </resources>
