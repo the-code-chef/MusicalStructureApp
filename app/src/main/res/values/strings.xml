@@ -8,4 +8,7 @@
     <string name="fast_forward">Fast Forward</string>
     <string name="next">Next</string>
     <string name="song_index">songIndex</string>
+    <string name="quit">Are you sure to quit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

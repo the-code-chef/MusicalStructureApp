@@ -1,9 +1,11 @@
 package com.example.deepanshu.musicalstructureapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
     private boolean isShuffle = false;
     private boolean isRepeat = false;
     private ArrayList<HashMap<String, String>> songsList = new ArrayList<>();
+
     /**
      * Background Runnable thread
      */
@@ -392,8 +395,29 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
     }
 
     @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this).setTitle(R.string.quit)
+                .setIcon(android.R.drawable.ic_dialog_info)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.this.finish();
+
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                }).show();
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
+        mHandler.removeCallbacks(mUpdateTimeTask);
         mp.release();
     }
 }
