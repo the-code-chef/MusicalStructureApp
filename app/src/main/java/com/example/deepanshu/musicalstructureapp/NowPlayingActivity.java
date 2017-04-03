@@ -98,10 +98,7 @@ public class NowPlayingActivity extends AppCompatActivity implements MediaPlayer
         mp.setOnCompletionListener(this); // Important
 
         // Getting all songs list
-        songsList = songsHelper.    getPlayList();
-
-        // By default play first song
-        playSong(0);
+        songsList = songsHelper.getPlayList();
 
         /*
           Play button click event
@@ -309,27 +306,32 @@ public class NowPlayingActivity extends AppCompatActivity implements MediaPlayer
      * @param songIndex - index of song
      */
     public void playSong(int songIndex) {
-        // Play song
-        try {
-            mp.reset();
-            mp.setDataSource(songsList.get(songIndex).get("songPath"));
-            mp.prepare();
-            mp.start();
-            // Displaying Song title
-            String songTitle = songsList.get(songIndex).get("songTitle");
-            songTitleLabel.setText(songTitle);
 
-            // Changing Button Image to pause image
-            btnPlay.setImageResource(R.drawable.btn_pause);
+        if (songsList.size() > 0) {
+            // Play song
+            try {
+                mp.reset();
+                mp.setDataSource(songsList.get(songIndex).get("songPath"));
+                mp.prepare();
+                mp.start();
+                // Displaying Song title
+                String songTitle = songsList.get(songIndex).get("songTitle");
+                songTitleLabel.setText(songTitle);
 
-            // set Progress bar values
-            songProgressBar.setProgress(0);
-            songProgressBar.setMax(100);
+                // Changing Button Image to pause image
+                btnPlay.setImageResource(R.drawable.btn_pause);
 
-            // Updating progress bar
-            updateProgressBar();
-        } catch (IllegalArgumentException | IllegalStateException | IOException e) {
-            e.printStackTrace();
+                // set Progress bar values
+                songProgressBar.setProgress(0);
+                songProgressBar.setMax(100);
+
+                // Updating progress bar
+                updateProgressBar();
+            } catch (IllegalArgumentException | IllegalStateException | IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Toast.makeText(NowPlayingActivity.this, getString(R.string.no_songs), Toast.LENGTH_SHORT).show();
         }
     }
 
