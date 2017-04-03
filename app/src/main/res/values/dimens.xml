@@ -7,4 +7,6 @@
     <dimen name="dp_100">100dp</dimen>
     <dimen name="dp_20">20dp</dimen>
     <dimen name="dp_6">6dp</dimen>
+    <dimen name="sp_24">24sp</dimen>
+    <dimen name="dp_16">16dp</dimen>
 </resources>

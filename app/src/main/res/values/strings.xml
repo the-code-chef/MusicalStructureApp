@@ -11,4 +11,7 @@
     <string name="quit">Are you sure to quit?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="music_library">Music Library</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="home">Home</string>
 </resources>

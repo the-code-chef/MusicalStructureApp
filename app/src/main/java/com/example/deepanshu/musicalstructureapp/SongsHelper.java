@@ -20,16 +20,14 @@ class SongsHelper {
      * and store the details in ArrayList
      */
     ArrayList<HashMap<String, String>> getPlayList() {
-        if (null != MEDIA_PATH) {
-            File home = new File(MEDIA_PATH);
-            File[] files = home.listFiles();
-            if (null != files && files.length > 0) {
-                for (File file : files) {
-                    if (file.isDirectory()) {
-                        scanDirectory(file);
-                    } else {
-                        addSongToList(file);
-                    }
+        File home = new File(MEDIA_PATH);
+        File[] files = home.listFiles();
+        if (null != files && files.length > 0) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    scanDirectory(file);
+                } else {
+                    addSongToList(file);
                 }
             }
         }
