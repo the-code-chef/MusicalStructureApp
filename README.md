@@ -33,4 +33,4 @@ Screen 1                          |Screen 2
 
 
 # Download
-You can download the apk here [SingleScreenApp](../../raw/master/app/screenshots/app-debug.apk)
+You can download the apk here [MusicalStructureApp](../../raw/master/app/screenshots/app-debug.apk)
