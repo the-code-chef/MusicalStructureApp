@@ -41,6 +41,8 @@ public class NowPlayingActivity extends AppCompatActivity implements MediaPlayer
     private boolean isRepeat = false;
     private ArrayList<HashMap<String, String>> songsList = new ArrayList<>();
 
+    // I am gonna use google play music library to fetch the song and payyoumoney payment gateway to download official song
+
     /**
      * Background Runnable thread
      */

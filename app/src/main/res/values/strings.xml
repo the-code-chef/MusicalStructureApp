@@ -15,4 +15,5 @@
     <string name="now_playing">Now Playing</string>
     <string name="home">Home</string>
     <string name="no_songs">No Songs To Play</string>
+    <string name="songitemname">SongItemName</string>
 </resources>

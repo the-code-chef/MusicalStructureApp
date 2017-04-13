@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:background="#4a4a4a">
 
+    <!-- I am gonna use google play music library to fetch the song -->
+
     <LinearLayout
         android:id="@+id/label"
         android:layout_width="match_parent"
