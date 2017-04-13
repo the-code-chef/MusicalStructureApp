@@ -4,13 +4,19 @@
     android:layout_height="match_parent"
     android:background="#4a4a4a">
 
-    <!-- I am gonna use google play music library to fetch the song -->
+    <TextView
+        android:id="@+id/lib_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_16"
+        android:gravity="center"
+        android:text="@string/library_name"/>
 
     <LinearLayout
         android:id="@+id/label"
+        android:layout_below="@+id/lib_name"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:layout_alignParentTop="true"
         android:background="@color/colorAccent"
         android:orientation="horizontal">
 

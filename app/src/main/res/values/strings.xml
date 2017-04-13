@@ -16,4 +16,5 @@
     <string name="home">Home</string>
     <string name="no_songs">No Songs To Play</string>
     <string name="songitemname">SongItemName</string>
+    <string name="library_name">I am gonna use google play music library to fetch the song and payyoumoney payment gateway to download official song</string>
 </resources>
