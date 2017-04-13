@@ -1,13 +1,5 @@
 *.iml
 .gradle
 local.properties
-.idea/gradle.xml
-.idea/modules.xml
-.idea/workspace.xml
-.idea/libraries
 .idea
-.DS_Store
 build
-captures
-.externalNativeBuild
-*.zip
