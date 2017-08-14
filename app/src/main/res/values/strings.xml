@@ -11,10 +11,11 @@
     <string name="quit">Are you sure to quit?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="music_library">Music Library</string>
+    <string name="music_library">Music Library Playlist</string>
     <string name="now_playing">Now Playing</string>
     <string name="home">Home</string>
     <string name="no_songs">No Songs To Play</string>
     <string name="songitemname">SongItemName</string>
     <string name="library_name">I am gonna use google play music library to fetch the song and payyoumoney payment gateway to download official song</string>
+    <string name="app_name_message">Musical Structure App which would allow a user to play audio files</string>
 </resources>
