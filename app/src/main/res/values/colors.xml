@@ -6,4 +6,5 @@
     <color name="colorSongText">#04b3d2</color>
     <color name="colorCurrentDuration">#eeeeee</color>
     <color name="colorTotalDuration">#04cbde</color>
+    <color name="f3f3f3">#f3f3f3</color>
 </resources>

@@ -10,8 +10,8 @@
         android:id="@+id/songTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:color="#f3f3f3"
-        android:text="@string/songitemname"
+        android:color="@color/f3f3f3"
         android:padding="@dimen/dp_10"
+        android:text="@string/songitemname"
         android:textSize="@dimen/sp_16" />
 </android.support.v7.widget.CardView>

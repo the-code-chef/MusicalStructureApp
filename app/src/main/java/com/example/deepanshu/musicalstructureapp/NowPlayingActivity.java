@@ -34,8 +34,8 @@ public class NowPlayingActivity extends AppCompatActivity implements MediaPlayer
     // Handler to update UI timer, progress bar etc,.
     private Handler mHandler = new Handler();
     private Utilities utils;
-    private int seekForwardTime = 5000; // 5000 milliseconds
-    private int seekBackwardTime = 5000; // 5000 milliseconds
+    private static final int SEEK_FORWARD = 5000; // 5000 milliseconds
+    private static final int SEEK_BACKWARD = 5000; // 5000 milliseconds
     private int currentSongIndex = 0;
     private boolean isShuffle = false;
     private boolean isRepeat = false;
@@ -139,9 +139,9 @@ public class NowPlayingActivity extends AppCompatActivity implements MediaPlayer
                 // get current song position
                 int currentPosition = mp.getCurrentPosition();
                 // check if seekForward time is lesser than song duration
-                if (currentPosition + seekForwardTime <= mp.getDuration()) {
+                if (currentPosition + SEEK_FORWARD <= mp.getDuration()) {
                     // forward song
-                    mp.seekTo(currentPosition + seekForwardTime);
+                    mp.seekTo(currentPosition + SEEK_FORWARD);
                 } else {
                     // forward to end position
                     mp.seekTo(mp.getDuration());
@@ -160,9 +160,9 @@ public class NowPlayingActivity extends AppCompatActivity implements MediaPlayer
                 // get current song position
                 int currentPosition = mp.getCurrentPosition();
                 // check if seekBackward time is greater than 0 sec
-                if (currentPosition - seekBackwardTime >= 0) {
+                if (currentPosition - SEEK_BACKWARD >= 0) {
                     // forward song
-                    mp.seekTo(currentPosition - seekBackwardTime);
+                    mp.seekTo(currentPosition - SEEK_BACKWARD);
                 } else {
                     // backward to starting position
                     mp.seekTo(0);
@@ -248,13 +248,13 @@ public class NowPlayingActivity extends AppCompatActivity implements MediaPlayer
             public void onClick(View arg0) {
                 if (isShuffle) {
                     isShuffle = false;
-                    Toast.makeText(getApplicationContext(), "Shuffle is OFF", Toast.LENGTH_SHORT)
+                    Toast.makeText(getApplicationContext(), R.string.shuffle_off, Toast.LENGTH_SHORT)
                             .show();
                     btnShuffle.setImageResource(R.drawable.btn_shuffle);
                 } else {
                     // make repeat to true
                     isShuffle = true;
-                    Toast.makeText(getApplicationContext(), "Shuffle is ON", Toast.LENGTH_SHORT)
+                    Toast.makeText(getApplicationContext(), R.string.shuffle_on, Toast.LENGTH_SHORT)
                             .show();
                     // make shuffle to false
                     isRepeat = false;

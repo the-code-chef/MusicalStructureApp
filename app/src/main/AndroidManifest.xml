@@ -14,7 +14,9 @@
         <activity
             android:name=".NowPlayingActivity"
             android:label="@string/now_playing" />
-        <activity android:name=".PlayListActivity" />
+        <activity
+            android:name=".PlayListActivity"
+            android:label="@string/playlist" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
